@@ -10,7 +10,7 @@ const Header = () => {
         <>
             <div className='w-full h-20 flex justify-between items-center px-6  top-0 '>
                 <h1 className='text-white text-2xl md:text-3xl font-bold z-50'>
-                    Noman <span className='span1'>Shabeer</span>
+                    Noman <span className='span1 text-red-600 '>S</span>
                 </h1>
                 <div className='hidden md:flex gap-5 md:gap-6'>
                     <NavLink style={{ "--i": 4 }} data-text="Home"
@@ -109,7 +109,7 @@ const Header = () => {
                         w-full text-center py-3
                         transition-all duration-300 hover:bg-gray-500 "
                     >
-                        project
+                        Project
                     </NavLink>
 
                 </div>

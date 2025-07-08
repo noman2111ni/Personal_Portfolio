@@ -34,7 +34,7 @@ const Project = () => {
         <>
             <button
                 onClick={handleBack}
-                className="mt-4 md:left-8 text-white hover:text-gray-300 transition-colors duration-200"
+                className="m-4  md:left-18 text-white hover:text-gray-300 transition-colors duration-200"
                 aria-label="Back to home"
             >
                 <IoArrowBack className="text-3xl" />
