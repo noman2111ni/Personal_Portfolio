@@ -15,7 +15,7 @@ const Left = () => {
                     1500,
                 ]}
                 wrapper="span"
-                speed={20}
+                speed={17}
                 className="block font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 
     bg-clip-text text-transparent  1font-semibold text-3xl md:text-2xl lg:text-5xl mt-4"
                 repeat={Infinity}
