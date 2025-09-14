@@ -1,71 +1,79 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
-  const [result, setResult] = useState('');
-  const [formError, setFormError] = useState('');
+  const [result, setResult] = useState("");
+  const [formError, setFormError] = useState("");
   const navigate = useNavigate();
 
   const deleteForm = () => {
-    navigate('/');
+    navigate("/");
   };
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setFormError('');
-    setResult('');
+    setFormError("");
+    setResult("");
     const formData = new FormData(event.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
 
     if (!name || !email || !message) {
-      setFormError('All fields are required.');
+      setFormError("All fields are required.");
       return;
     }
 
-    setResult('Sending...');
-    formData.append('access_key', '178a59ab-a8a0-4d12-95e5-b57a4f38b727');
+    setResult("Sending...");
+    formData.append("access_key", "27174389-a97a-415f-a125-8c705b38b7b7");
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         body: formData,
       });
       const data = await response.json();
+      console.log("Response:", data);
+
       if (data.success) {
-        setResult('Form Submitted Successfully');
-        event.target.reset(); // Reset the form
+        setResult("Form Submitted Successfully ✅");
+        event.target.reset();
       } else {
-        setResult(data.message || 'Something went wrong. Please try again.');
+        setResult(data.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
-      console.error('Error:', error);
-      setResult('An error occurred. Please try again later.');
+      console.error("Error:", error);
+      setResult("An error occurred. Please try again later.");
     }
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="shadow-lg rounded-lg p-8 md:p-12 w-[90%] sm:w-[300px] lg:w-[500px] relative border border-white overflow-hidden">
-        <h1
+    <div className=" flex items-center justify-center px-4">
+      <div className="relative mt-6 md:mt-10 w-full max-w-lg p-6 md:p-10 rounded-xl shadow-2xl border border-white/20 backdrop-blur-lg bg-white/10"> 
+        {/* Close Button */}
+        <button
           onClick={deleteForm}
-          className="absolute top-0 right-0 text-2xl md:text-3xl font-bold text-white mb-4 cursor-pointer px-3 hover:bg-red-400 rounded-bl-2xl "
+          className="absolute top-0 right-0 text-xl md:text-xl font-bold text-white cursor-pointer px-3 py-2 rounded-bl-xl hover:bg-red-500 transition-colors"
         >
-          x
-        </h1>
-        <h1 className="text-2xl md:text-2xl font-bold text-center text-white">
+          ✕
+        </button>
+
+        {/* Title */}
+        <h1 className="text-2xl font-extrabold text-center mb- text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
           Contact Us
         </h1>
-        <form onSubmit={onSubmit} className="space-y-6">
+
+        <form onSubmit={onSubmit} className="space-y-4 ">
           {formError && (
-            <p className="text-red-500 text-center text-lg">{formError}</p>
+            <p className="text-red-400 text-center font-medium">{formError}</p>
           )}
           {result && (
-            <p className="text-green-500 text-center text-lg">{result}</p>
+            <p className="text-green-400 text-center font-medium">{result}</p>
           )}
+
+          {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-white font-medium mb-2">
+            <label htmlFor="name" className="block text-white mb-2">
               Name
             </label>
             <input
@@ -73,11 +81,13 @@ const Contact = () => {
               name="name"
               id="name"
               placeholder="Enter your name"
-              className="w-full px-4 py-2 border border-white text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-md bg-black/30 text-white border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500"
             />
           </div>
+
+          {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-white font-medium mb-2">
+            <label htmlFor="email" className="block text-white mb-2">
               Email
             </label>
             <input
@@ -85,11 +95,13 @@ const Contact = () => {
               name="email"
               id="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border border-white text-white  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-md bg-black/30 text-white border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
           </div>
+
+          {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-white font-medium mb-2">
+            <label htmlFor="message" className="block text-white mb-2">
               Message
             </label>
             <textarea
@@ -97,15 +109,17 @@ const Contact = () => {
               id="message"
               rows="4"
               placeholder="Enter your message"
-              className="w-full px-4 py-2 border border-white text-white  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full h-20 px-4 py-3 rounded-md bg-black/30 text-white border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"
             ></textarea>
           </div>
+
+          {/* Button */}
           <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600 transition duration-300"
+              className="w-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-black font-semibold py-3 px-6 rounded-md hover:opacity-90 transition duration-300 shadow-lg"
             >
-              Send Message
+              Send Message 🚀
             </button>
           </div>
         </form>
