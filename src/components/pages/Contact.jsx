@@ -48,22 +48,22 @@ const Contact = () => {
   };
 
   return (
-    <div className=" flex items-center justify-center px-4">
-      <div className="relative mt-6 md:mt-10 w-full max-w-lg p-6 md:p-10 rounded-xl shadow-2xl border border-white/20 backdrop-blur-lg bg-white/10"> 
+    <div className="flex items-center justify-center min-h-screen px-4">
+      <div className="relative w-full max-w-lg p-6 md:p-10 rounded-xl shadow-2xl border border-white/20 backdrop-blur-lg bg-white/10">
         {/* Close Button */}
         <button
           onClick={deleteForm}
-          className="absolute top-0 right-0 text-xl md:text-xl font-bold text-white cursor-pointer px-3 py-2 rounded-bl-xl hover:bg-red-500 transition-colors"
+          className="absolute top-0 right-0 text-xl md:text-xl font-bold text-white cursor-pointer px-3 py-2 rounded-bl-xl"
         >
           ✕
         </button>
 
         {/* Title */}
-        <h1 className="text-2xl font-extrabold text-center mb- text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+        <h1 className="text-2xl font-extrabold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
           Contact Us
         </h1>
 
-        <form onSubmit={onSubmit} className="space-y-4 ">
+        <form onSubmit={onSubmit} className="space-y-4">
           {formError && (
             <p className="text-red-400 text-center font-medium">{formError}</p>
           )}

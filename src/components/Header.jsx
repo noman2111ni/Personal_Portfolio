@@ -18,9 +18,9 @@ const Header = () => {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
     { path: "/skills", label: "Skills" },
     { path: "/projects", label: "Projects" },
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
@@ -33,7 +33,7 @@ const Header = () => {
           bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 
           bg-clip-text text-transparent"
         >
-          Noman
+          DevNoman
         </h1>
 
         {/* Desktop Menu */}
