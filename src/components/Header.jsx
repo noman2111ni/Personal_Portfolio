@@ -26,14 +26,14 @@ const Header = () => {
   return (
     <>
       {/* Navbar */}
-      <header className="w-full h-20 flex justify-between items-center px-6 top-0">
+      <header className="w-full h-20 flex justify-between items-center px-3 top-0">
         {/* Logo */}
         <h1
           className="text-2xl md:text-3xl font-bold z-50 
           bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 
           bg-clip-text text-transparent"
         >
-          DevNoman
+          Noman
         </h1>
 
         {/* Desktop Menu */}
