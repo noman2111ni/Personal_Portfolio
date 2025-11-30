@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Main from "./Main";
 
 // Reusable IconButton
 const IconButton = ({ onClick, icon }) => (
@@ -26,77 +25,79 @@ const Header = () => {
   return (
     <>
       {/* Navbar */}
-      <header className="w-full h-20 flex justify-between items-center px-3 top-0">
-        {/* Logo */}
-        <h1
-          className="text-2xl md:text-3xl font-bold z-50 
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-sm">
+        <div className="container mx-auto h-20 flex justify-between items-center px-3">
+          {/* Logo */}
+          <h1
+            className="text-2xl md:text-3xl font-bold z-50 
           bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 
           bg-clip-text text-transparent"
-        >
-          Noman
-        </h1>
+          >
+            Noman
+          </h1>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-6">
-          {navLinks.map(({ path, label }, idx) => (
-            <NavLink
-              key={idx}
-              to={path}
-              className="relative group md:text-xl font-semibold text-white"
-            >
-              {label}
-              <span
-                className="absolute left-0 -bottom-1 w-0 h-0.5 
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex gap-6">
+            {navLinks.map(({ path, label }, idx) => (
+              <NavLink
+                key={idx}
+                to={path}
+                className="relative group md:text-xl font-semibold text-white"
+              >
+                {label}
+                <span
+                  className="absolute left-0 -bottom-1 w-0 h-0.5 
                 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 
                 transition-all duration-500 group-hover:w-full"
-              ></span>
-            </NavLink>
-          ))}
-        </nav>
+                ></span>
+              </NavLink>
+            ))}
+          </nav>
 
-        {/* Mobile Menu Toggle */}
-        <div className="flex md:hidden z-50">
-          {toggle ? (
-            <IconButton
-              onClick={() => setToggle(false)}
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-7 h-7"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              }
-            />
-          ) : (
-            <IconButton
-              onClick={() => setToggle(true)}
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-7 h-7"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              }
-            />
-          )}
+          {/* Mobile Menu Toggle */}
+          <div className="flex md:hidden z-50">
+            {toggle ? (
+              <IconButton
+                onClick={() => setToggle(false)}
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-7 h-7"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                }
+              />
+            ) : (
+              <IconButton
+                onClick={() => setToggle(true)}
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-7 h-7"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                }
+              />
+            )}
+          </div>
         </div>
       </header>
 
@@ -149,8 +150,7 @@ const Header = () => {
         </nav>
       </aside>
 
-      {/* Main Content */}
-      <Main />
+      {/* Main Content is rendered by routes in App.jsx */}
     </>
   );
 };

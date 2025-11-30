@@ -46,7 +46,7 @@ const Right = () => {
                                     sequence={[
                                         'Noman Shabeer',
                                         1000,
-                                        'Frontend Web Developer',
+                                        'Web Developer',
                                         1000,
                                         'React Developer',
                                         1000,

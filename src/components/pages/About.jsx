@@ -11,10 +11,10 @@ const About = () => {
   return (
     <>
 
-      <section id="about" className="relative">
+      <section id="about" className="relative pt-17">
         <IoArrowBack
           onClick={handleBack}
-          className='absolute top-10 left-2 text-2xl text-yellow-400 cursor-pointer hover:text-yellow-300 transition-colors'
+          className='absolute top-24 left-2 text-2xl text-yellow-400 cursor-pointer hover:text-yellow-300 transition-colors'
         />
         <div className='flex flex-col items-center justify-center min-h-screen px-4 py-18 md:py-16 '>
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 ">

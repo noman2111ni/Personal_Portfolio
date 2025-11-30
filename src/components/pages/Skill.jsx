@@ -61,11 +61,11 @@ const Skill = () => {
       {/* Back Button */}
       <IoArrowBack
         onClick={handleBack}
-        className="absolute top-8 left-6 text-3xl text-yellow-400 cursor-pointer hover:text-yellow-300 transition-colors"
+        className="absolute top-24 left-6 text-3xl text-yellow-400 cursor-pointer hover:text-yellow-300 transition-colors"
       />
 
       {/* Skills Section */}
-      <div className="skills-container min-h-screen  px-6 py-16 text-center">
+      <div className="skills-container min-h-screen px-6 py-16 text-center pt-20">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-transparent bg-clip-text">
           My Skills

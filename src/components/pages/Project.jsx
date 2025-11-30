@@ -36,8 +36,8 @@ const Project = () => {
   }
   return (
     <>
-      <section className="min-h-screen  text-white px-6 md:px-12 py-10">
-        <IoArrowBack onClick={handleBack} className=' arrow absolute top-11 left-9 text-[30px] text-white cursor-pointer hover:text-red-400' />
+      <section className="min-h-screen text-white px-6 md:px-12 py-10 pt-27">
+        <IoArrowBack onClick={handleBack} className=' arrow absolute top-24 left-9 text-[30px] text-white cursor-pointer hover:text-red-400' />
 
         {/* Heading */}
         <div className="text-center mb-12">

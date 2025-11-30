@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
+import Main from "./components/Main";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 import Skill from "./components/pages/Skill";
@@ -29,9 +30,10 @@ function App() {
       ></div>
       <BrowserRouter>
         <div className="w-screen mx-auto container relative z-10">
-          <div className="w-full h-screen mx-auto container">
+          <Header />
+          <div className="w-full mx-auto container">
             <Routes>
-              <Route path="/" element={<Header />}></Route>
+              <Route path="/" element={<Main />}></Route>
               <Route path="/about" element={<About />}></Route>
               <Route path="/contact" element={<Contact />}></Route>
               <Route path="/skills" element={<Skill />}></Route>

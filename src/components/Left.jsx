@@ -7,7 +7,7 @@ const Left = () => {
             {/* Typing Animation */}
             <TypeAnimation
                 sequence={[
-                    "Hi, I'm Noman Shabeer",
+                    "I'm Noman Shabeer",
                     1500,
                     "A Passionate Full Stack Developer",
                     1500,

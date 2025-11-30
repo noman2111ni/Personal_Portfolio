@@ -48,7 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4">
+    <div className="flex items-center justify-center min-h-screen px-4 pt-29">
       <div className="relative w-full max-w-lg p-6 md:p-10 rounded-xl shadow-2xl border border-white/20 backdrop-blur-lg bg-white/10">
         {/* Close Button */}
         <button
